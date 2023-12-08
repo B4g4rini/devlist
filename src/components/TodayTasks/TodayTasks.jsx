@@ -7,7 +7,11 @@ import TaskItem from "../TaskItem/TaskItem";
 const TodayTasks = () => {
   const { taskList, progressBarValue } = useContext(AppContext);
   return (
-    <div className={styles.container}>
+    <div className={styles.container}
+    style={{
+      marginTop: `${progressBarValue === 100 ? "-107px" : "0"}`
+    }}
+    >
       <Title iconName={"list"} text={"Tarefas de hoje"} />
       {progressBarValue === 100 || taskList.length === 0 ?(
         <span className={styles.TodayTasksMessage}>Você não tem tarefas disponíveis</span>
